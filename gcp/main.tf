@@ -1,6 +1,6 @@
 // Configure the Google Cloud provider
 provider "google" {
- credentials = file("terraform-user.json")
+ credentials = "${var.user}"
  project     = "terraform-testing-cedric"
  region      = "europe-west1"
 }

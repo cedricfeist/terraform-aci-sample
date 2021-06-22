@@ -1,0 +1,10 @@
+
+aci/variables.tf
+aci/.terraform/providers/registry.terraform.io/ciscodevnet/aci/0.7.0/darwin_amd64/README.md
+aci/.terraform/providers/registry.terraform.io/ciscodevnet/aci/0.7.0/darwin_amd64/terraform-provider-aci_v0.7.0
+aci/.terraform/providers/registry.terraform.io/ciscodevnet/aci/0.7.0/darwin_amd64/LICENSE
+aci/.terraform/providers/registry.terraform.io/ciscodevnet/aci/0.7.0/darwin_amd64/CHANGELOG.md
+aci/.terraform.lock.hcl
+*.tfstate
+*.backup
+.vagrant/rgloader/loader.rb

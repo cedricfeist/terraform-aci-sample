@@ -17,20 +17,20 @@ provider "aci" {
   insecure = true
 }
 
-resource "aci_tenant" "cfeist_terraform_tenant" {
+resource "aci_tenant" "terraform_tenant" {
   name        = "cfeist_terraform_tenant"   
-  description = "This tenant was created by the Terraform ACI provider"
+  description = "Tenant created by TF"
 }
 
-resource "aci_bridge_domain" "cfeist_terraform_bridgedomain" {
-  tenant_dn   = "${aci_tenant.cfeist_terraform_tenant.id}"
-  name        = "cfeist_terraform_bridgedomain"
-  description = "This bridge domain was created by the Terraform ACI provider"
-}
+#resource "aci_bridge_domain" "terraform_bridgedomain" {
+#  tenant_dn   = "${aci_tenant.terraform_tenant.id}"
+#  name        = "cfeist_terraform_bridgedomain"
+#  description = "BD created by TF"
+#}
 
-resource "aci_subnet" "cfeist_terraform_subnet" {
-  bridge_domain_dn                    = "${aci_bridge_domain.cfeist_terraform_bridgedomain.id}"
-  ip                                  = "10.199.199.1/24"
-  scope                               = "private"
-  description                         = "This subject was created by Terraform"
-} 
+resource "aci_vrf" "terraform_vrf" {
+  tenant_dn = aci_tenant.terraform_tenant.id
+  description = "VRF created by TF"
+  name = "cfeist_terraform_vrf"
+  
+}

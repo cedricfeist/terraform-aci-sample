@@ -35,8 +35,8 @@ resource "aci_vrf" "terraform_vrf" {
   
 }
 
-#resource "aci_application_profile" "terraform_ap" {
-#  tenant_dn = aci_tenant.terraform_tenant.id
-#  description = "AP created by TF"
-#  name = "cfeist_terraform-ap"
-#}
+resource "aci_application_profile" "terraform_ap" {
+  tenant_dn = aci_tenant.terraform_tenant.id
+  description = "AP created by TF"
+  name = "cfeist_terraform-ap"
+}

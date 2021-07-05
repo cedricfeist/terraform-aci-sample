@@ -54,7 +54,7 @@ resource "aci_application_epg" "redis_epg" {
 }
 
 resource "aci_application_profile" "kubernetes_ap" {
-  tenant_tenant_dn = aci_tenant.terraform_tenant.id
+  tenant_dn = aci_tenant.terraform_tenant.id
   description = "default kubernetes AP by Terraform"
   name = "kubernetes" 
 }

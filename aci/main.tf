@@ -35,8 +35,22 @@ resource "aci_vrf" "terraform_vrf" {
   
 }
 
-resource "aci_application_profile" "terraform_ap" {
+resource "aci_application_profile" "guestbook-ap" {
   tenant_dn = aci_tenant.terraform_tenant.id
-  description = "AP created by terraform"
-  name = "cfeist_terraform-appProfile"
+  description = "AP created by Terraform"
+  name = "guestbook-AP"
 }
+
+resource "aci_application_epg" "frontend_epg" {
+  application_profile_dn = aci_application_profile.guestbook-ap.id
+  description = "frontend EPG by Terraform"
+  name = "frontend"
+}
+
+resource "aci_application_epg" "redis_epg" {
+  application_profile_dn = aci_application_profile.guestbook-ap.id
+  description = "redis EPG by Terraform"
+  name = "redis"
+}
+
+

@@ -58,7 +58,3 @@ resource "aci_application_profile" "kubernetes_ap" {
   description = "default kubernetes AP by Terraform"
   name = "kubernetes" 
 }
-
-output "Kubernetes AP" {
-  value = aci_application_profile.kubernetes_ap.name
-}

@@ -59,6 +59,6 @@ resource "aci_application_profile" "kubernetes_ap" {
   name = "kubernetes" 
 }
 
-output "name" {
-  value = aci_application_epg.kubernetes_ap.name
+output "Kubernetes AP" {
+  value = aci_application_profile.kubernetes_ap.name
 }

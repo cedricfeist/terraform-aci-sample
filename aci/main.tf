@@ -53,9 +53,8 @@ resource "aci_application_epg" "redis_epg" {
   name = "redis"
 }
 
-#resource "aci_application_profile" "kubernetes_ap" {
-#  tenant_dn = aci_tenant.terraform_tenant.id
-#  description = "default kubernetes AP by Terraform"
-#  name = "kubernetes" 
-#}
-#test
+resource "aci_application_profile" "kubernetes_ap" {
+  tenant_dn = aci_tenant.terraform_tenant.id
+  description = "default kubernetes AP by Terraform"
+  name = "kubernetes" 
+}

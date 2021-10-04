@@ -47,11 +47,11 @@ resource "aci_application_epg" "frontend_epg" {
   name = "frontend"
 }
 
-#resource "aci_application_epg" "redis_epg" {
-#  application_profile_dn = aci_application_profile.guestbook-ap.id
-#  description = "redis EPG by Terraform"
-#  name = "redis"
-#}
+resource "aci_application_epg" "kubernetes_epg" {
+  application_profile_dn = aci_application_profile.guestbook-ap.id
+  description = "kubernetes EPG by Terraform"
+  name = "kubernetes"
+}
 
 #resource "aci_application_profile" "kubernetes_ap" {
 #  tenant_dn = aci_tenant.terraform_tenant.id

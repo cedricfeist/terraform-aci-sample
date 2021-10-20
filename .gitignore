@@ -8,3 +8,7 @@ aci/.terraform.lock.hcl
 *.tfstate
 *.backup
 .vagrant/rgloader/loader.rb
+.terraform.lock.hcl
+*.tfvars
+.terraform
+.DS_Store

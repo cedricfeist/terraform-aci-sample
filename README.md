@@ -1,7 +1,4 @@
 # Demo Terraform Configurations
 
-##ACI
+## ACI
 - For use with on-prem ACI Deployments
-
-## GCP
-- For use with Google Cloud Platform

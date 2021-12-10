@@ -18,7 +18,7 @@ provider "aci" {
 }
 
 resource "aci_tenant" "terraform_tenant" {
-  name        = "cfeist_terraform_tenant"   
+  name        = var.tenant_name   
   description = "Tenant created by TF"
 }
 

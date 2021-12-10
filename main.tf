@@ -18,7 +18,7 @@ provider "aci" {
 }
 
 resource "aci_tenant" "terraform_tenant" {
-  name        = var.tenant_name   
+  name        = "tn-HashiTalksDACH"   
   description = "Tenant created by TF"
 }
 
@@ -28,6 +28,12 @@ resource "aci_vrf" "terraform_vrf" {
   name = "cfeist_terraform_vrf"
   
 }
+
+#resource "aci_tenant" "hashitalks_tenant" {
+#  name        = var.tenant_name
+#  description = "HashiTalks Tenant"
+#}
+
 
 #resource "aci_application_profile" "terraform-ap" {
 #  tenant_dn = aci_tenant.terraform_tenant.id

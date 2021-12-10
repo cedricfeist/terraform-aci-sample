@@ -29,20 +29,20 @@ resource "aci_vrf" "terraform_vrf" {
   
 }
 
-#resource "aci_application_profile" "guestbook-ap" {
-#  tenant_dn = aci_tenant.terraform_tenant.id
-#  description = "AP created by Terraform"
-#  name = "guestbook-AP"
-#}
+resource "aci_application_profile" "terraform-ap" {
+  tenant_dn = aci_tenant.terraform_tenant.id
+  description = "AP created by Terraform"
+  name = "HashiTalksDACH-AP"
+}
 
 #resource "aci_application_epg" "frontend_epg" {
-#  application_profile_dn = aci_application_profile.guestbook-ap.id
+#  application_profile_dn = aci_application_profile.terraform-ap.id
 #  description = "frontend EPG by Terraform"
 #  name = "frontend"
 #}
 
 #resource "aci_application_epg" "kubernetes_epg" {
-#  application_profile_dn = aci_application_profile.guestbook-ap.id
+#  application_profile_dn = aci_application_profile.terraform-ap.id
 #  description = "kubernetes EPG by Terraform"
 #  name = "kubernetes"
 #}

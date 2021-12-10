@@ -22,12 +22,6 @@ resource "aci_tenant" "terraform_tenant" {
   description = "Tenant created by TF"
 }
 
-#resource "aci_bridge_domain" "terraform_bridgedomain" {
-#  tenant_dn   = "${aci_tenant.terraform_tenant.id}"
-#  name        = "cfeist_terraform_bridgedomain"
-#  description = "BD created by TF"
-#}
-
 resource "aci_vrf" "terraform_vrf" {
   tenant_dn = aci_tenant.terraform_tenant.id
   description = "VRF created by TF"
@@ -35,26 +29,26 @@ resource "aci_vrf" "terraform_vrf" {
   
 }
 
-resource "aci_application_profile" "guestbook-ap" {
-  tenant_dn = aci_tenant.terraform_tenant.id
-  description = "AP created by Terraform"
-  name = "guestbook-AP"
-}
+#resource "aci_application_profile" "guestbook-ap" {
+#  tenant_dn = aci_tenant.terraform_tenant.id
+#  description = "AP created by Terraform"
+#  name = "guestbook-AP"
+#}
 
-resource "aci_application_epg" "frontend_epg" {
-  application_profile_dn = aci_application_profile.guestbook-ap.id
-  description = "frontend EPG by Terraform"
-  name = "frontend"
-}
+#resource "aci_application_epg" "frontend_epg" {
+#  application_profile_dn = aci_application_profile.guestbook-ap.id
+#  description = "frontend EPG by Terraform"
+#  name = "frontend"
+#}
 
-resource "aci_application_epg" "kubernetes_epg" {
-  application_profile_dn = aci_application_profile.guestbook-ap.id
-  description = "kubernetes EPG by Terraform"
-  name = "kubernetes"
-}
+#resource "aci_application_epg" "kubernetes_epg" {
+#  application_profile_dn = aci_application_profile.guestbook-ap.id
+#  description = "kubernetes EPG by Terraform"
+#  name = "kubernetes"
+#}
 
-resource "aci_application_profile" "kubernetes_ap" {
-  tenant_dn = aci_tenant.terraform_tenant.id
-  description = "default kubernetes AP by Terraform"
-  name = "kubernetes" 
-}
+#resource "aci_application_profile" "kubernetes_ap" {
+#  tenant_dn = aci_tenant.terraform_tenant.id
+#  description = "default kubernetes AP by Terraform"
+#  name = "kubernetes" 
+#}

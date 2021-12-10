@@ -29,10 +29,10 @@ resource "aci_vrf" "terraform_vrf" {
   
 }
 
-#resource "aci_tenant" "hashitalks_tenant" {
-#  name        = var.tenant_name
-#  description = "HashiTalks Tenant"
-#}
+resource "aci_tenant" "hashitalks_tenant" {
+  name        = var.tenant_name
+  description = "HashiTalks Tenant"
+}
 
 
 #resource "aci_application_profile" "terraform-ap" {

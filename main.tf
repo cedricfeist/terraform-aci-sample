@@ -41,11 +41,11 @@ resource "aci_application_profile" "terraform-ap" {
   name = "HashiTalksDACH-AP"
 }
 
-#resource "aci_application_epg" "frontend-epg" {
-#  application_profile_dn = aci_application_profile.terraform-ap.id
-#  description = "frontend EPG by Terraform"
-#  name = "frontend"
-#}
+resource "aci_application_epg" "frontend-epg" {
+  application_profile_dn = aci_application_profile.terraform-ap.id
+  description = "frontend EPG by Terraform"
+  name = "frontend"
+}
 
 #resource "aci_application_epg" "kubernetes_epg" {
 #  application_profile_dn = aci_application_profile.terraform-ap.id

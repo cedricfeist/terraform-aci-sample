@@ -38,13 +38,13 @@ resource "aci_tenant" "hashitalks_tenant" {
 resource "aci_application_profile" "terraform-ap" {
   tenant_dn = aci_tenant.terraform_tenant.id
   description = "AP created by Terraform"
-  name = "HashiTalksDACH-AP"
+  name = "HashiTalksDACH-ap"
 }
 
 resource "aci_application_epg" "frontend-epg" {
   application_profile_dn = aci_application_profile.terraform-ap.id
   description = "frontend EPG by Terraform"
-  name = "frontend"
+  name = "frontend-epg"
 }
 
 #resource "aci_application_epg" "kubernetes_epg" {
